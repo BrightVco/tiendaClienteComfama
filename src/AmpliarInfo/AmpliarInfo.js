@@ -1,22 +1,26 @@
 import './AmpliarInfo.css'
+import {useLocation} from 'react-router-dom'
 
 export function AmpliarInfo() {
+
+    let location=useLocation()
+    let producto=location.state.producto
 
     return(
         <>
         <br />
         <br />
         <div class="container my-5">
-            <div class="row"></div>
+            <div class="row">
             <div class="col-12 col-md-7">
-                <img src="https://firebasestorage.googleapis.com/v0/b/bybright-efa55.appspot.com
-                /o/ref1.png?alt=media&token=a2ac6ea7-dbef-4e03-9cd0-68a5af12da73" 
+                <img src={producto.foto}
                 class="img-fluid w-75" 
                 alt="foto"
                 />
             </div>
             <div class="col-12 col-md-5 border p-3 rounded shadow">
-                <h2 class="fw-bold">Buso oversized</h2>
+                <h2 class="fw-bold">{producto.nombre}</h2>
+                <p> {producto.descripcion}</p>
                 <i class="bi bi-star-fill text-warning fs-1 ms-1"></i>
                 <i class="bi bi-star-fill text-warning fs-1 ms-1"></i>
                 <i class="bi bi-star-fill text-warning fs-1 ms-1"></i>
@@ -28,7 +32,7 @@ export function AmpliarInfo() {
                 <br/>
                 <br/>
                 <h1>$70000</h1>
-                <span class="badge text-bg-primary mt-3">Oferton</span> 
+                <span class="badge text-bg-primary mt-3">Ofertón</span> 
                 <br/>
                 <br/>
                 <p class="text-muted mt-3">Hasta 48 cuotas</p>
@@ -36,11 +40,11 @@ export function AmpliarInfo() {
                 <img src=" https://firebasestorage.googleapis.com/v0/b/bybright-efa55.appspot.com/o/american-express.png?alt=media&token=63042a3f-ed89-4969-9ae1-5432b3533840" alt="iconoAmeExp" class="img-fluid"/>
                 <br/>
                 <i class="bi bi-truck display-1 mt-5"></i>
-                <p>Entregas en Medellin y valle del aburra</p>
+                <p>Entregas en Medellín y Valle del Aburrá</p>
                 <br/>
                 <br/>
                 <form>
-                    <label class="form-label">Cantidad:</label>
+                    <label class="form-label fw-bold">Cantidad</label>
                     <input class="form-control" type='number' value="1"></input>
                     <button type="submit" class="btn btn-warning mt-2 w-100">
                         <i class="bi bi-cart4">Añadir</i>
@@ -49,7 +53,7 @@ export function AmpliarInfo() {
                 </form>
             </div>
         </div>
-        
+        </div>
         </>
         )
     
